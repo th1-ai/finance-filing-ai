@@ -1,0 +1,16 @@
+[
+  {
+    "po_ref": "PO-1001",
+    "vendor": "Baía Fresca Seafood",
+    "amount_eur": 1572.5,
+    "description": "Fresh seafood delivery, weekly order",
+    "received": true
+  },
+  {
+    "po_ref": "PO-2002",
+    "vendor": "GreenScape Grounds",
+    "amount_eur": 640.0,
+    "description": "Quarterly grounds maintenance",
+    "received": true
+  }
+]

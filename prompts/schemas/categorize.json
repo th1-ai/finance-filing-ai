@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": ["Housekeeping", "F&B", "Utilities", "Property", "Software", "Sundry"]
+    },
+    "reason": {"type": "string", "maxLength": 300}
+  },
+  "required": ["category", "reason"],
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "vendor": {"type": "string", "minLength": 1, "maxLength": 200},
+    "invoice_no": {"type": "string", "minLength": 1, "maxLength": 80},
+    "invoice_date": {"type": "string", "maxLength": 20},
+    "amount_eur": {"type": "number", "minimum": 0},
+    "net_eur": {"type": "number", "minimum": 0},
+    "vat_eur": {"type": "number", "minimum": 0},
+    "lines": {"type": "integer", "minimum": 1},
+    "po_ref": {"type": ["string", "null"], "maxLength": 40}
+  },
+  "required": ["vendor", "invoice_no", "amount_eur", "lines"],
+  "additionalProperties": false
+}

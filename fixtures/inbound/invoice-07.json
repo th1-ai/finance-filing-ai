@@ -1,0 +1,12 @@
+{
+  "id": "invoice-07",
+  "from": "sales@unknown-traders.example.com",
+  "from_name": "Unknown Traders Ltd",
+  "subject": "Invoice UT-004",
+  "body": "Please see attached invoice for the items supplied.",
+  "received_at": "2026-08-12T14:20:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "UT-004.pdf",
+  "currency": "EUR",
+  "raw_text": "UNKNOWN TRADERS LTD\nInvoice UT-004\nDate: 2026-08-12\nBill to: Hotel Aurora\n\n1) Assorted promotional items\n2) Miscellaneous consumables\n\nNet: EUR 251.22\nVAT (23%): EUR 58.78\nTotal due: EUR 310.00"
+}

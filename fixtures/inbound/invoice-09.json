@@ -1,0 +1,12 @@
+{
+  "id": "invoice-09",
+  "from": "billing@cleannest-supplies.example.com",
+  "from_name": "CleanNest Supplies",
+  "subject": "Invoice INV-3355 - PO-9999",
+  "body": "Invoice against PO-9999 attached - let us know if you need anything else.",
+  "received_at": "2026-08-23T09:10:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "INV-3355.pdf",
+  "currency": "EUR",
+  "raw_text": "CLEANNEST SUPPLIES LDA\nInvoice INV-3355   PO ref: PO-9999\nDate: 2026-08-22\nBill to: Hotel Aurora\n\n1 x Housekeeping supplies restock, express order\n\nNet: EUR 333.33\nVAT (23%): EUR 76.67\nTotal due: EUR 410.00"
+}

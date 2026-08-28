@@ -1,0 +1,10 @@
+{
+  "vendor": "CleanNest Supplies",
+  "invoice_no": "INV-3301",
+  "invoice_date": "2026-08-10",
+  "amount_eur": 249.0,
+  "net_eur": 202.44,
+  "vat_eur": 46.56,
+  "lines": 1,
+  "po_ref": null
+}

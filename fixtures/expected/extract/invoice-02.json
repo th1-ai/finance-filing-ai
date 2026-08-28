@@ -1,0 +1,10 @@
+{
+  "vendor": "Baía Fresca Seafood",
+  "invoice_no": "FS-6621",
+  "invoice_date": "2026-08-13",
+  "amount_eur": 1719.0,
+  "net_eur": 1397.56,
+  "vat_eur": 321.44,
+  "lines": 4,
+  "po_ref": "PO-1001"
+}

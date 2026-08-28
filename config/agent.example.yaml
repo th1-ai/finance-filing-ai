@@ -1,0 +1,111 @@
+# ---------------------------------------------------------------------------
+# agent.yaml - Finance Filing AI's own knobs.
+#
+# `make setup` copies this file to config/agent.yaml. Edit THAT one; this
+# example stays as a clean reference. See config/hotel.yaml for the systems
+# every agent shares (mode, llm provider, review approvals).
+# ---------------------------------------------------------------------------
+
+# Which of pms/email/messaging this agent actually reads from - it does not
+# use a PMS or WhatsApp/chat messaging at all, see docs/integrations.md
+# "Not used by this agent". Keeps `make run`'s SAMPLE DATA warning honest
+# when `systems.pms.adapter`/`systems.messaging.adapter` are left as `mock`.
+# See core/adapters/__init__.py:_systems_used.
+systems_used: [email]
+
+# Below this, a ledger code is not trusted on its own - the invoice is queued
+# for a person instead of guessed at. This is the roster's "below 90%
+# confidence it asks instead of guessing", made real. Confidence itself comes
+# from `gl_map` below, never from the model - see docs/how-it-works.md.
+confidence_threshold: 0.90
+
+# The vendor -> ledger category table. A vendor listed here skips the
+# `categorize` model call entirely (docs/how-it-works.md, "vendor table as
+# DB not prompt"). `utility_type` (electricity | water) is only read for a
+# Utilities vendor; anything else, the code falls back to a name regex
+# (`/water|água|agua/i`). Names are matched case-insensitively.
+known_vendors:
+  "cleannest supplies": {category: Housekeeping}
+  "skyline saas co": {category: Software}
+  "costa watt energia": {category: Utilities, utility_type: electricity}
+  "serra blue water co": {category: Utilities, utility_type: water}
+
+# Every vendor here may clear a small no-PO invoice under the threshold below.
+# A vendor NOT on this list is always held for a retrospective PO, even under
+# the threshold - see docs/how-it-works.md, design decision 9.
+approved_vendors:
+  - "cleannest supplies"
+  - "skyline saas co"
+  - "greenscape grounds"
+  - "baía fresca seafood"
+
+# The ledger map. Confidence here is the number the 90% gate checks - fixed
+# per category, not something the model reports about itself. Add a category
+# by adding a row; nothing else needs to change.
+gl_map:
+  Housekeeping: {code: "6210", label: "Housekeeping supplies", confidence: 0.97}
+  "F&B":        {code: "5110", label: "F&B cost of sales", confidence: 0.96}
+  Utilities:    {code: "6410", label: "Utilities - power & water", confidence: 0.99}
+  Property:     {code: "6310", label: "Property & grounds maintenance", confidence: 0.95}
+  Software:     {code: "6720", label: "Software subscriptions", confidence: 0.98}
+
+# The fallback when nothing above fits. Always below confidence_threshold on
+# purpose - a Sundry invoice always waits for a person.
+sundry: {code: "6900", label: "Sundry", confidence: 0.55}
+
+# The five rules. `gl-auto` and `utility-anomaly` are the two this agent
+# reads (the other three in the source spec belong to a sibling agent's
+# 3-way-match half of the same page). Flip one, run `make run` again, and
+# read the new reason - the toggle changes real output, not a log line.
+rules:
+  gl-auto: true            # off: every invoice held, no code assigned - see
+                            # docs/how-it-works.md, decision 10.
+  utility-anomaly: true    # off: no-PO utility bills clear "on trust", no
+                            # meter check.
+
+# Purchase-order matching. Tolerance must be breached on BOTH counts to hold
+# a variance - a percentage alone, or a euro amount alone, is not enough.
+matching:
+  tolerance_pct: 2
+  tolerance_eur: 100
+  no_po_threshold_eur: 1000   # non-utility, no-PO invoices below this may clear
+
+# The utility cross-check for a no-PO utility bill (config/agent.yaml, not a
+# constant - see docs/how-it-works.md, decision 6 and 8).
+utility:
+  window_days: 30
+  tariff_eur_per_kwh: 0.18
+  tariff_eur_per_m3: 2.15
+  tolerance_pct: 15
+
+# Where the purchase-order ledger and the meter feed come from. Both are
+# small readers in tools/, not core adapters yet - see docs/integrations.md.
+po_ledger:
+  adapter: mock   # mock | csv
+meter_feed:
+  adapter: mock   # mock | csv
+
+# The optional cosmetic controller's note, appended to the daily digest. It
+# reads run stats only - never an invoice's own text - and is never filed.
+# Off by default: it is a nice-to-have, not part of the roster promise.
+narrate:
+  enabled: false
+  knowledge: [property.md]
+
+# How often `make run --watch` polls, and what `make schedule` prints by
+# default for the invoice-filing loop. The digest has its own cadence below.
+poll_seconds: 3600   # hourly
+
+digest:
+  hour: 7   # local hour tools/digest.py is meant to run at, via cron/launchd
+
+# `python3 tools/schedule.py --all` (or `make schedule ARGS="--all"`) prints one
+# cron/launchd/systemd snippet per job below, reading its own command and
+# cadence - see docs/how-it-works.md, "What runs when", and scheduler/crontab.example.
+schedule:
+  invoice-filing:
+    command: "tools/run.py --once"
+    cadence: hourly
+  daily-digest:
+    command: "tools/digest.py"
+    cadence: morning        # 0 7 * * * - before the working day starts

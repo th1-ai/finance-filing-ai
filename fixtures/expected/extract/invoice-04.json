@@ -1,0 +1,10 @@
+{
+  "vendor": "Serra Blue Water Co",
+  "invoice_no": "WT-5521",
+  "invoice_date": "2026-08-18",
+  "amount_eur": 950.0,
+  "net_eur": 772.36,
+  "vat_eur": 177.64,
+  "lines": 1,
+  "po_ref": null
+}

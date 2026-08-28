@@ -1,0 +1,10 @@
+{
+  "vendor": "Vale Grande Contractors",
+  "invoice_no": "PR-771",
+  "invoice_date": "2026-08-05",
+  "amount_eur": 2400.0,
+  "net_eur": 1951.22,
+  "vat_eur": 448.78,
+  "lines": 3,
+  "po_ref": null
+}

@@ -1,0 +1,12 @@
+{
+  "id": "invoice-03",
+  "from": "faturas@costawatt.example.com",
+  "from_name": "Costa Watt Energia",
+  "subject": "Electricity bill EL-88213",
+  "body": "Your electricity bill for the period is attached.",
+  "received_at": "2026-08-21T07:00:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "EL-88213.pdf",
+  "currency": "EUR",
+  "raw_text": "COSTA WATT ENERGIA\nInvoice EL-88213\nDate: 2026-08-20\nBill to: Hotel Aurora\n\nElectricity supply, billing period 2026-07-21 to 2026-08-20\n\nNet: EUR 6,910.57\nVAT (23%): EUR 1,589.43\nTotal due: EUR 8,500.00"
+}

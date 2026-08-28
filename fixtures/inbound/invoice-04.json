@@ -1,0 +1,12 @@
+{
+  "id": "invoice-04",
+  "from": "faturacao@serrabluewater.example.com",
+  "from_name": "Serra Blue Water Co",
+  "subject": "Water bill WT-5521",
+  "body": "Water and sewerage bill for the period attached.",
+  "received_at": "2026-08-19T07:15:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "WT-5521.pdf",
+  "currency": "EUR",
+  "raw_text": "SERRA BLUE WATER CO\nInvoice WT-5521\nDate: 2026-08-18\nBill to: Hotel Aurora\n\nWater supply and sewerage, billing period 2026-07-18 to 2026-08-18\n\nNet: EUR 772.36\nVAT (23%): EUR 177.64\nTotal due: EUR 950.00"
+}

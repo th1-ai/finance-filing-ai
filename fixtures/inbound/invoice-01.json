@@ -1,0 +1,12 @@
+{
+  "id": "invoice-01",
+  "from": "billing@cleannest-supplies.example.com",
+  "from_name": "CleanNest Supplies",
+  "subject": "Invoice INV-3301",
+  "body": "Hi Hotel Aurora team, please find attached our invoice for this month's cleaning supplies order.",
+  "received_at": "2026-08-11T09:05:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "INV-3301.pdf",
+  "currency": "EUR",
+  "raw_text": "CLEANNEST SUPPLIES LDA\nInvoice INV-3301\nDate: 2026-08-10\nBill to: Hotel Aurora\n\n1 x Monthly housekeeping supplies restock (linen-safe detergent, glass cleaner, bin liners)\n\nNet: EUR 202.44\nVAT (23%): EUR 46.56\nTotal due: EUR 249.00\n\nThank you for your business."
+}

@@ -1,0 +1,10 @@
+{
+  "vendor": "GreenScape Grounds",
+  "invoice_no": "GS-1190",
+  "invoice_date": "2026-08-14",
+  "amount_eur": 648.0,
+  "net_eur": 526.83,
+  "vat_eur": 121.17,
+  "lines": 2,
+  "po_ref": "PO-2002"
+}

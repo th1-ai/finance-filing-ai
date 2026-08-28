@@ -1,0 +1,10 @@
+{
+  "vendor": "Costa Watt Energia",
+  "invoice_no": "EL-88213",
+  "invoice_date": "2026-08-20",
+  "amount_eur": 8500.0,
+  "net_eur": 6910.57,
+  "vat_eur": 1589.43,
+  "lines": 1,
+  "po_ref": null
+}

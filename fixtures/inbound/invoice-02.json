@@ -1,0 +1,12 @@
+{
+  "id": "invoice-02",
+  "from": "accounts@baia-fresca.example.com",
+  "from_name": "Baía Fresca Seafood",
+  "subject": "Invoice FS-6621 - PO-1001",
+  "body": "Please find our invoice against your purchase order PO-1001 attached.",
+  "received_at": "2026-08-13T08:40:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "FS-6621.pdf",
+  "currency": "EUR",
+  "raw_text": "BAIA FRESCA SEAFOOD\nInvoice FS-6621   PO ref: PO-1001\nDate: 2026-08-13\nBill to: Hotel Aurora\n\nFresh fish, shellfish and daily catch, 4 lines, week 33 order\n\nNet: EUR 1,397.56\nVAT (23%): EUR 321.44\nTotal due: EUR 1,719.00"
+}

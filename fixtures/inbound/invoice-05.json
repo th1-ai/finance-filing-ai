@@ -1,0 +1,12 @@
+{
+  "id": "invoice-05",
+  "from": "office@valegrande-contractors.example.com",
+  "from_name": "Vale Grande Contractors",
+  "subject": "Invoice PR-771",
+  "body": "Invoice for the roof and gutter works completed last week.",
+  "received_at": "2026-08-06T10:30:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "PR-771.pdf",
+  "currency": "EUR",
+  "raw_text": "VALE GRANDE CONTRACTORS\nInvoice PR-771\nDate: 2026-08-05\nBill to: Hotel Aurora\n\n1) Roof tile repair, west wing\n2) Gutter clearing, full building\n3) Scaffolding hire, 3 days\n\nNet: EUR 1,951.22\nVAT (23%): EUR 448.78\nTotal due: EUR 2,400.00"
+}

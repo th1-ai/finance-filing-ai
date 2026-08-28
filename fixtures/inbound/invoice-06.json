@@ -1,0 +1,12 @@
+{
+  "id": "invoice-06",
+  "from": "billing@skylinesaas.example.com",
+  "from_name": "Skyline SaaS Co",
+  "subject": "Subscription receipt SUB-20260801",
+  "body": "Your monthly subscription receipt is attached.",
+  "received_at": "2026-08-01T06:00:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "SUB-20260801.pdf",
+  "currency": "EUR",
+  "raw_text": "SKYLINE SAAS CO\nReceipt SUB-20260801\nDate: 2026-08-01\nBill to: Hotel Aurora\n\n1 x Property-management add-on, monthly plan\n\nNet: EUR 72.36\nVAT (23%): EUR 16.64\nTotal due: EUR 89.00"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "invoice-08",
+  "from": "accounts@greenscapegrounds.example.com",
+  "from_name": "GreenScape Grounds",
+  "subject": "Invoice GS-1190 - PO-2002",
+  "body": "Invoice against your quarterly grounds contract, PO-2002, attached.",
+  "received_at": "2026-08-15T09:00:00+00:00",
+  "folder": "INBOX",
+  "attachment_filename": "GS-1190.pdf",
+  "currency": "EUR",
+  "raw_text": "GREENSCAPE GROUNDS\nInvoice GS-1190   PO ref: PO-2002\nDate: 2026-08-14\nBill to: Hotel Aurora\n\n1) Quarterly grounds maintenance labour\n2) Mulch and plant materials\n\nNet: EUR 526.83\nVAT (23%): EUR 121.17\nTotal due: EUR 648.00"
+}

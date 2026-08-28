@@ -1,0 +1,10 @@
+{
+  "vendor": "Unknown Traders Ltd",
+  "invoice_no": "UT-004",
+  "invoice_date": "2026-08-12",
+  "amount_eur": 310.0,
+  "net_eur": 251.22,
+  "vat_eur": 58.78,
+  "lines": 2,
+  "po_ref": null
+}

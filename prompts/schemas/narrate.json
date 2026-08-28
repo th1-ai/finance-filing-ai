@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "narrative": {"type": "string", "minLength": 1, "maxLength": 900}
+  },
+  "required": ["narrative"],
+  "additionalProperties": false
+}
